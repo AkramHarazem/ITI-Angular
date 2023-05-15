@@ -1,0 +1,18 @@
+      <h1 class="text-center bg-primary mt-5 border rounded-2 border-dark border-2 p-2">Students</h1>
+      <table class="table table-info text-center table-bordered border-dark">
+        <thead class="table-dark">
+          <tr>
+            <th class="col-6">Name</th>
+            <th class="col-6">Age</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let s of StudentDataTable">
+            <td class="fw-bold">{{s.name}}</td>
+            <td class="fw-bold">{{s.age}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+
+

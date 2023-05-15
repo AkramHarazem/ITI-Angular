@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row w-75 mt-2 text-center m-auto">
+    <h1 class="fw-light">Students</h1>
+    <div class="table-responsive-md">
+      <table class="table table- table-striped table-bordered border border-2 border-dark w-100">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Details</th>
+            <th>Update</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let s of students" class="border border-2 border-dark">
+            <td>{{s.id}}</td>
+            <td>{{s.Fname}}</td>
+            <td>{{s.Lname}}</td>
+            <td>{{s.email}}</td>
+            <td><a class="btn btn-outline-info" routerLink="/students/{{s.id}}">Details</a></td>
+            <td><a class="btn btn-outline-info" routerLink="/update/{{s.id}}">Update</a></td>
+            <td><a class="btn btn-outline-info" (click)="deleteStud(s.id)">Delete</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<!-- <app-student-item *ngFor="let s of students" [oneStud] ="s" ></app-student-item> -->

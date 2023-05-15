@@ -1,0 +1,41 @@
+<form action="" [formGroup]="Validator" class="bg-light p-5 w-75 m-auto border rounded-3">
+  <h1 class="text-center bg-light mb-5">Registration</h1>
+  <div class="form-group mt-2 d-flex w-75 m-auto align-items-center bg-light">
+      <label class="col-3 fw-bold bg-light" for="name">Name:</label>
+      <input formControlName="name" type="text" [ngClass]="nameValid ? trueClass : falseClass" id="name" >
+  </div>
+  <span *ngIf="nameValid then trueBlockN; else falseBlockN"></span>
+  <ng-template #trueBlockN>
+    <!-- <div class="w-50 offset-4 text-center mt-2">
+      <p class="alert alert-success">Name is Valid</p>
+    </div> -->
+    <p class="w-50 offset-4 text-center text-success mt-2 bg-light fw-bold">Name is Valid</p>
+
+  </ng-template>
+  <ng-template #falseBlockN>
+    <!-- <div class="w-50 offset-4 text-center mt-2" *ngIf="name"> -->
+      <!-- <p class="alert alert-danger">Name should not be less than 3 characters </p> -->
+    <!-- </div> -->
+      <p class="w-50 offset-4 text-center text-danger mt-2 bg-light fw-bold" *ngIf="name">Name should not be less than 3 characters </p>
+
+  </ng-template>
+
+  <div class="form-group mt-2 d-flex w-75 m-auto align-items-center bg-light">
+    <label class="col-3 fw-bold bg-light" for="age">Age:</label>
+    <input formControlName="age" type="text"  id="age" [ngClass]="ageValid ? trueClass : falseClass">
+  </div>
+  <span *ngIf="ageValid then trueBlockA; else falseBlockA"></span>
+    <ng-template #trueBlockA>
+      <div class="w-50 offset-4 text-center mt-2">
+        <p class="alert alert-success">Age is valid</p>
+      </div>
+    </ng-template>
+    <ng-template #falseBlockA>
+      <div class="w-50 offset-4 text-center mt-2" *ngIf="age">
+        <p class="alert alert-danger">Age should be between 20 and 40</p>
+      </div>
+    </ng-template>
+  <div class="form-group text-center d-flex mt-2 justify-content-center bg-light">
+<input type="button" (click)="AddData()" value="ADD" class="btn btn-light btn-dark col-4 fw-bold offset-3 ">
+  </div>
+</form>

@@ -1,0 +1,75 @@
+<!-- <div class="alert alert-secondary row" *ngIf="SelectedStud; else dataLoading">
+  <h1>Update</h1>
+  <div>
+    <label class="col-3" >First Name</label>
+    <input #fname class="col-6" type="text" value={{SelectedStud.Fname}}>
+  </div>
+  <div>
+  <label class="col-3">Last Name</label>
+  <input #lname class="col-6" type="text" value={{SelectedStud.Lname}}>
+  </div>
+  <div>
+  <label class="col-3">Email</label>
+  <input #email class="col-6" type="text" value={{SelectedStud.email}}>
+</div>
+<div>
+  <label class="col-3">Street</label>
+  <input #street class="col-6" type="text" value={{SelectedStud.address.street}}>
+</div>
+<div>
+  <label class="col-3">City</label>
+  <input #city class="col-6" type="text" value={{SelectedStud.address.city}}>
+</div>
+<div>
+  <label class="col-3">Phone</label>
+  <input #phone class="col-6" type="text" value={{SelectedStud.phone}}>
+</div>
+<div>
+  <input class="btn btn-outline-dark m-auto mt-3" type="button" value="update" (click)="updateStud(fname.value,lname.value,email.value,street.value,city.value,phone.value)">
+</div>
+
+</div> -->
+<div class="container">
+  <div class="row w-75 mt-2 text-center m-auto">
+    <form action="" [formGroup]="Validator" *ngIf="SelectedStud; else dataLoading">
+      <div class="row text-start d-flex align-items-center my-2">
+        <label class="col-lg-3 col-md-3 col-sm-12 fw-bold">First Name</label>
+        <input #fname formControlName="fname" [ngClass]="fnameValid ? trueClass : falseClass" type="text"
+          placeholder="First Name" value={{SelectedStud.Fname}} />
+      </div>
+      <div class="row text-start d-flex align-items-center my-2">
+        <label class="col-lg-3 col-md-3 col-sm-12 fw-bold">Last Name</label>
+        <input #lname formControlName="lname" [ngClass]="lnameValid ? trueClass : falseClass" type="text"
+          placeholder="Last Name" value={{SelectedStud.Lname}} />
+      </div>
+      <div class="row text-start d-flex align-items-center my-2">
+        <label class="col-lg-3 col-md-3 col-sm-12 fw-bold">Email</label>
+        <input #email formControlName="email" [ngClass]="emailValid ? trueClass : falseClass" type="text"
+          placeholder="yourMail@example.com" value={{SelectedStud.email}} />
+      </div>
+      <div class="row text-start d-flex align-items-center my-2">
+        <label class="col-lg-3 col-md-3 col-sm-12 fw-bold">street</label>
+        <input #street formControlName="street" [ngClass]="streetValid ? trueClass : falseClass" type="text"
+          placeholder="ex123 st." value={{SelectedStud.address.street}} />
+      </div>
+      <div class="row text-start d-flex align-items-center my-2">
+        <label class="col-lg-3 col-md-3 col-sm-12 fw-bold">City</label>
+        <input #city formControlName="city" [ngClass]="cityValid ? trueClass : falseClass" type="text"
+          placeholder="City" value={{SelectedStud.address.city}} />
+      </div>
+      <div class="row text-start d-flex align-items-center my-2">
+        <label class="col-lg-3 col-md-3 col-sm-12 fw-bold">Phone</label>
+        <input #phone formControlName="phone" [ngClass]="phoneValid ? trueClass : falseClass" type="text"
+          placeholder="011|010|012 12345678" value={{SelectedStud.phone}} />
+      </div>
+      <div class="mt-2 col-12">
+        <input class="btn btn-outline-dark m-auto mt-3 w-50" type="button" value="update"
+          (click)="updateStud(fname.value,lname.value,email.value,street.value,city.value,phone.value)">
+      </div>
+    </form>
+  </div>
+</div>
+
+<ng-template #dataLoading>
+  <h1>Loading...</h1>
+</ng-template>

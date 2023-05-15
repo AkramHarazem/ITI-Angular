@@ -1,0 +1,46 @@
+  <div class="form" (keypress)="enterKey($event)">
+    <h1 class="text-center bg-primary mt-5 border rounded-2 border-dark border-2 p-2">Registration</h1>
+    <!-- Name input -->
+    <div class="form-group d-flex mt-2 align-items-center">
+      <label class="col-3 fw-bold" for="name">Name: </label>
+      <input class="form-control bg-light border rounded-2 border-1 border-dark" [(ngModel)]="name" type="text" id="name" autocomplete="off">
+    </div>
+    <!-- Name validation -->
+    <span *ngIf="nameValid then trueBlockN; else falseBlockN"></span>
+    <ng-template #trueBlockN>
+      <div class="w-50 m-auto text-center mt-2">
+        <p class="alert alert-success">Name is Valid</p>
+      </div>
+    </ng-template>
+    <ng-template #falseBlockN>
+      <div class="w-50 m-auto text-center mt-2" *ngIf="name">
+        <p class="alert alert-danger">Name should not be less than 3 characters </p>
+      </div>
+    </ng-template>
+    <!-- Age input -->
+    <div class="form-group d-flex mt-2 align-items-center">
+      <label class="col-3 fw-bold" for="age">Age:</label>
+      <input class="form-control bg-light border rounded-2 border-1 border-dark" [(ngModel)]="age" type="text" id="age" autocomplete="off">
+    </div>
+    <!-- Age validation -->
+    <span *ngIf="ageValid then trueBlockA; else falseBlockA"></span>
+    <ng-template #trueBlockA>
+      <div class="w-50 m-auto text-center mt-2">
+        <p class="alert alert-success">Age is valid</p>
+      </div>
+    </ng-template>
+    <ng-template #falseBlockA>
+      <div class="w-50 m-auto text-center mt-2" *ngIf="age">
+        <p class="alert alert-danger">Age should be between 20 and 40</p>
+      </div>
+    </ng-template>
+    <!-- button -->
+    <div class="form-group d-flex mt-2 justify-content-center">
+      <input class="btn btn-light btn-dark col-4 fw-bold" type="button" value="Add" (click)="studData()">
+    </div>
+    <!-- <p>name: {{name}}</p>
+    <p>age: {{age}}</p> -->
+  </div>
+
+<!-- </div>
+</div> -->

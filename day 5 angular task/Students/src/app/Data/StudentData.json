@@ -1,0 +1,81 @@
+{
+  "students": [
+    {
+      "Fname": "Ahmed",
+      "Lname": "Gamal",
+      "email": "Ahmed@gmail.com",
+      "address": {
+        "street": "123 St.",
+        "city": "Cairo"
+      },
+      "phone": "01112345678",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "Fname": "Mohamed",
+      "Lname": "Salem",
+      "email": "Mohamed@gmail.com",
+      "address": {
+        "city": "Giza",
+        "street": "456 St."
+      },
+      "phone": "01112345632"
+    },
+    {
+      "id": 3,
+      "Fname": "Shady",
+      "Lname": "Seif",
+      "email": "shady@gmail.com",
+      "address": {
+        "city": "Ismalia",
+        "street": "446 St."
+      },
+      "phone": "01212374678"
+    },
+    {
+      "id": 4,
+      "Fname": "Atef",
+      "Lname": "Sayed",
+      "email": "Atef@gmail.com",
+      "address": {
+        "city": "Mahla",
+        "street": "637 St."
+      },
+      "phone": "01012341978"
+    },
+    {
+      "id": 5,
+      "Fname": "Hamed",
+      "Lname": "Hassan",
+      "email": "hamed@gmail.com",
+      "address": {
+        "city": "Tanta",
+        "street": "468 St."
+      },
+      "phone": "01112478678"
+    },
+    {
+      "id": 6,
+      "Fname": "Sara",
+      "Lname": "Mohsen",
+      "email": "sara@gmail.com",
+      "address": {
+        "city": "Minya",
+        "street": "468 St."
+      },
+      "phone": "01012094678"
+    },
+    {
+      "id": 7,
+      "Fname": "Marwa",
+      "Lname": "Amged",
+      "email": "Marwa@gmail.com",
+      "address": {
+        "city": "Aswan",
+        "street": "456 St."
+      },
+      "phone": "01112345153"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+<!-- <input class="text" type="text" placeholder="Enter text" (input)="getdata($event)> -->
+<!-- <input class="text" type="text" placeholder="Enter text" [(ngModel)]="text" (change)="onChange()"> -->
+<input class="text" type="text" placeholder="Enter text" [(ngModel)]="text">
+<p>Text: {{text}} </p>
+<input type="button" value="Reset" (click)="ClearText()">

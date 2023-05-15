@@ -1,0 +1,45 @@
+<!-- <div class="container">
+  <div class="row w-75 mt-2 text-center m-auto">
+<div class="alert alert-secondary fw-bold" *ngIf="SelectedStud; else dataLoading">
+  <h1>Student: {{SelectedStud.Fname}} {{SelectedStud.Lname}}</h1>
+  <p>First Name: {{SelectedStud.Fname}}</p>
+  <p>Last Name: {{SelectedStud.Lname}}</p>
+  <p>Email: {{SelectedStud.email}}</p>
+  <p>Address: {{SelectedStud.address.street}}, {{SelectedStud.address.city}}</p>
+  <p>Phone: {{SelectedStud.phone}}</p>
+</div>
+</div>
+</div> -->
+
+<ng-template #dataLoading>
+  <h1>Loading...</h1>
+</ng-template>
+<div class="container">
+  <div class="row w-75 mt-2 text-center m-auto">
+    <div class="alert alert-secondary fw-bold" *ngIf="SelectedStud; else dataLoading">
+      <h3>Student: {{SelectedStud.Fname}} {{SelectedStud.Lname}}</h3>
+      <table class="table table- table-striped table-bordered border border-2 border-dark w-100">
+        <tr>
+          <td>First Name</td>
+          <td>{{SelectedStud.Fname}}</td>
+        </tr>
+        <tr>
+          <td>Last Name</td>
+          <td>{{SelectedStud.Lname}}</td>
+        </tr>
+        <tr>
+          <td>Email</td>
+          <td>{{SelectedStud.email}}</td>
+        </tr>
+        <tr>
+          <td>Address</td>
+          <td>{{SelectedStud.address.street}}, {{SelectedStud.address.city}}</td>
+        </tr>
+        <tr>
+          <td>Phone</td>
+          <td>{{SelectedStud.phone}}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
