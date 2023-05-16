@@ -20,13 +20,14 @@
             <td>{{s.Fname}}</td>
             <td>{{s.Lname}}</td>
             <td>{{s.email}}</td>
-            <td><a class="btn btn-outline-info" routerLink="/students/{{s.id}}">Details</a></td>
-            <td><a class="btn btn-outline-info" routerLink="/update/{{s.id}}">Update</a></td>
-            <td><a class="btn btn-outline-info" (click)="deleteStud(s.id)">Delete</a></td>
+            <td><a class="btn btn-secondary" routerLink="/students/{{s.id}}">Details</a></td>
+            <td><a class="btn btn-success" routerLink="/update/{{s.id}}">Update</a></td>
+            <td><a class="btn btn-danger" (click)="deleteStud(s.id)">Delete</a></td>
           </tr>
         </tbody>
       </table>
     </div>
   </div>
 </div>
+
 <!-- <app-student-item *ngFor="let s of students" [oneStud] ="s" ></app-student-item> -->

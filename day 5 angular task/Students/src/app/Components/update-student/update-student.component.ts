@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { StudService } from 'src/app/Services/stud.service';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { ConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.component';
+
 
 
 @Component({
@@ -13,7 +16,7 @@ export class UpdateStudentComponent implements OnInit {
   ID:any;
   SelectedStud:any;
   Validator:any;
-constructor(private updateServices:StudService, route:ActivatedRoute, private rou:Router){
+constructor(private updateServices:StudService, route:ActivatedRoute, private rou:Router, private dialog:MatDialog ){
    this.ID = route.snapshot.params['id']
 }
 
@@ -61,22 +64,66 @@ get phoneValid (){
 trueClass ="form-control border border-success border-2 bg-light w-75";
 falseClass ="form-control border border-danger border-2 bg-light w-75";
 
-
 updateStud(Fname:any,Lname:any,email:any,street:any,city:any,phone:any){
-  if(this.formValid){
-    if( confirm('do want to update these data?')){
-      let updatedData = {
-      Fname,
-      Lname,
-      email,
-      address: {street,city}
-      ,phone}
-      this.updateServices.updateStudent(this.ID,updatedData).subscribe();
-      this.rou.navigate(['/'])
+  const dialogRef = this.dialog.open(ConfirmDialogComponent,{
+    width: '300px',
+    data: {
+      title: 'Update',
+      message: 'Are you sure you want to update this student data?',
+      confirm: 'Update',
+      cancel: 'Cancel'
     }
-  }else{
-    alert ('form invalid, check red boxes')
-  }
+  });
 
+  dialogRef.afterClosed().subscribe( result=>{
+    if (result ===true){
+      if(this.formValid){
+          let updatedData = {
+          Fname,
+          Lname,
+          email,
+          address: {street,city}
+          ,phone}
+          this.updateServices.updateStudent(this.ID,updatedData).subscribe();
+          this.rou.navigate(['/'])
+      }else{
+        const dialogRef = this.dialog.open(ConfirmDialogComponent,{
+          width: '300px',
+          data: {
+            title: 'Form Invalid',
+            message: 'Please check red boxes',
+            confirm: 'try again',
+            cancel: 'Back to home'
+          }
+        });
+        dialogRef.afterClosed().subscribe( result=>{
+                  if (result ===true){
+                    this.rou.navigate([`/update/${this.ID}`])
+                  }else{
+                    this.rou.navigate(['/'])
+                  }
+                })
+      }
+
+    }
+  });
 }
+
+// updateStud(Fname:any,Lname:any,email:any,street:any,city:any,phone:any){
+//   if(this.formValid){
+//     if( confirm('do want to update these data?')){
+//       let updatedData = {
+//       Fname,
+//       Lname,
+//       email,
+//       address: {street,city}
+//       ,phone}
+//       this.updateServices.updateStudent(this.ID,updatedData).subscribe();
+//       this.rou.navigate(['/'])
+//     }
+//   }else{
+//     alert ('form invalid, check red boxes')
+//   }
+
+// }
 }

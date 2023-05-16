@@ -11,7 +11,11 @@ import { StudentItemComponent } from './Components/student-item/student-item.com
 import { HeaderComponent } from './Components/header/header.component';
 import { ErrorComponent } from './Components/error/error.component';
 import { AddStudentComponent } from './Components/add-student/add-student.component';
-import { UpdateStudentComponent } from './Components/update-student/update-student.component'
+import { UpdateStudentComponent } from './Components/update-student/update-student.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ConfirmDialogComponent } from './Components/confirm-dialog/confirm-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,14 +25,17 @@ import { UpdateStudentComponent } from './Components/update-student/update-stude
     HeaderComponent,
     ErrorComponent,
     AddStudentComponent,
-    UpdateStudentComponent
+    UpdateStudentComponent,
+    ConfirmDialogComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

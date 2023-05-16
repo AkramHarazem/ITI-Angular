@@ -35,35 +35,35 @@
       <div class="row text-start d-flex align-items-center my-2">
         <label class="col-lg-3 col-md-3 col-sm-12 fw-bold">First Name</label>
         <input #fname formControlName="fname" [ngClass]="fnameValid ? trueClass : falseClass" type="text"
-          placeholder="First Name" value={{SelectedStud.Fname}} />
+          placeholder="First Name"/>
       </div>
       <div class="row text-start d-flex align-items-center my-2">
         <label class="col-lg-3 col-md-3 col-sm-12 fw-bold">Last Name</label>
         <input #lname formControlName="lname" [ngClass]="lnameValid ? trueClass : falseClass" type="text"
-          placeholder="Last Name" value={{SelectedStud.Lname}} />
+          placeholder="Last Name"/>
       </div>
       <div class="row text-start d-flex align-items-center my-2">
         <label class="col-lg-3 col-md-3 col-sm-12 fw-bold">Email</label>
         <input #email formControlName="email" [ngClass]="emailValid ? trueClass : falseClass" type="text"
-          placeholder="yourMail@example.com" value={{SelectedStud.email}} />
+          placeholder="yourMail@example.com"/>
       </div>
       <div class="row text-start d-flex align-items-center my-2">
         <label class="col-lg-3 col-md-3 col-sm-12 fw-bold">street</label>
         <input #street formControlName="street" [ngClass]="streetValid ? trueClass : falseClass" type="text"
-          placeholder="ex123 st." value={{SelectedStud.address.street}} />
+          placeholder="ex123 st."/>
       </div>
       <div class="row text-start d-flex align-items-center my-2">
         <label class="col-lg-3 col-md-3 col-sm-12 fw-bold">City</label>
         <input #city formControlName="city" [ngClass]="cityValid ? trueClass : falseClass" type="text"
-          placeholder="City" value={{SelectedStud.address.city}} />
+          placeholder="City"/>
       </div>
       <div class="row text-start d-flex align-items-center my-2">
         <label class="col-lg-3 col-md-3 col-sm-12 fw-bold">Phone</label>
         <input #phone formControlName="phone" [ngClass]="phoneValid ? trueClass : falseClass" type="text"
-          placeholder="011|010|012 12345678" value={{SelectedStud.phone}} />
+          placeholder="011|010|012 12345678"/>
       </div>
       <div class="mt-2 col-12">
-        <input class="btn btn-outline-dark m-auto mt-3 w-50" type="button" value="update"
+        <input class="btn btn-success m-auto mt-3 w-50" type="button" value="update"
           (click)="updateStud(fname.value,lname.value,email.value,street.value,city.value,phone.value)">
       </div>
     </form>
