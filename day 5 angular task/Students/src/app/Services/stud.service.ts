@@ -24,6 +24,10 @@ export class StudService {
     return this.client.put(`${this.BaseUrl}/${id}`, student)
   }
 
+  updateStudents(student: any) {
+    return this.client.put(this.BaseUrl, student)
+  }
+
   deleteStudent(id: any) {
     return this.client.delete(`${this.BaseUrl}/${id}`)
   }

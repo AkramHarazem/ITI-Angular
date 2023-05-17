@@ -78,13 +78,13 @@ export class AddStudentComponent {
             data: {
               title: '',
               message: 'Added successfully',
-              confirm: 'Ok',
+              confirm: 'Add again',
               cancel: 'Back to Home'
             }
           });
           dialogRef.afterClosed().subscribe(result => {
             if (result === true) {
-              this.rou.navigate([`/`])
+              location.reload()
             } else {
               this.rou.navigate([`/`])
             }
